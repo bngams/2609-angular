@@ -1,0 +1,7 @@
+{
+  "products": [
+    { "id": 1, "name": "Clavier mécanique", "price": 89 },
+    { "id": 2, "name": "Souris ergonomique", "price": 45 },
+    { "id": 3, "name": "Écran 27 pouces", "price": 249 }
+  ]
+}

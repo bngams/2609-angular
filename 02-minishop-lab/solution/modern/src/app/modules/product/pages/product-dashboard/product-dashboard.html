@@ -1,0 +1,8 @@
+<h1>Nos produits</h1>
+
+@if (error(); as message) {
+  <p class="error">{{ message }}</p>
+}
+
+<app-product-form (add)="onAdd($event)" />
+<app-product-list [products]="products()" (buy)="onBuy($event)" />

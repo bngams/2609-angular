@@ -1,0 +1,13 @@
+<form class="product-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="name" placeholder="Nom du produit" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Prix</mat-label>
+    <input matInput type="number" formControlName="price" />
+  </mat-form-field>
+
+  <button matButton="filled" type="submit" [disabled]="form.invalid">Ajouter</button>
+</form>

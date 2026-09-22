@@ -1,0 +1,9 @@
+<mat-card class="product-card">
+  <mat-card-header>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle>{{ product.price }} €</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button matButton (click)="buy.emit(product)">BUY</button>
+  </mat-card-actions>
+</mat-card>

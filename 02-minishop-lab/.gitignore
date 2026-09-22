@@ -1,0 +1,22 @@
+# Dépendances et artefacts de build des solutions
+solution/*/node_modules/
+solution/*/dist/
+solution/*/.angular/
+solution/*/coverage/
+
+# Cypress
+solution/*/cypress/videos/
+solution/*/cypress/screenshots/
+
+# Données modifiées par json-server pendant les démos
+# (db.json est versionné : c'est le jeu de données de départ)
+
+# Systèmes de fichiers / éditeurs
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-error.log*

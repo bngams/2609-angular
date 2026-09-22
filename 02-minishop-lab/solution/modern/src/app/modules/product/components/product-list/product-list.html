@@ -1,0 +1,7 @@
+<div class="product-list">
+  @for (product of products(); track product.name) {
+    <app-product-card [product]="product" (buy)="buy.emit($event)" />
+  } @empty {
+    <p>Aucun produit pour l'instant.</p>
+  }
+</div>

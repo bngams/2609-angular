@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>My App</span>
+
+  <a matButton routerLink="/home" routerLinkActive="active">Accueil</a>
+  <a matButton routerLink="/products" routerLinkActive="active">Produits</a>
+  <a matButton routerLink="/about" routerLinkActive="active">À propos</a>
+
+  <span class="spacer"></span>
+
+  <button matIconButton aria-label="Panier">
+    <mat-icon [matBadge]="count()" matBadgeColor="warn">shopping_cart</mat-icon>
+  </button>
+
+  @if (isLoggedIn()) {
+    <button matButton (click)="logout()">Se déconnecter</button>
+  } @else {
+    <a matButton routerLink="/auth/login">Se connecter</a>
+  }
+</mat-toolbar>

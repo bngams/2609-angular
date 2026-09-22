@@ -1,0 +1,7 @@
+<h1>Connexion</h1>
+
+@if (error(); as message) {
+  <p class="error">{{ message }}</p>
+}
+
+<app-login-form (connected)="onConnected($event)" />

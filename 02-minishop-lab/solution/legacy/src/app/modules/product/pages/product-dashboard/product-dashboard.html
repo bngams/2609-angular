@@ -1,0 +1,12 @@
+<h1>Nos produits</h1>
+
+@if (error) {
+  <p class="error">{{ error }}</p>
+}
+
+<app-product-form (add)="onAdd($event)" />
+
+<!-- Le pipe async s'abonne et se désabonne tout seul. -->
+@if (products$ | async; as products) {
+  <app-product-list [products]="products.concat(localProducts)" (buy)="onBuy($event)" />
+}
