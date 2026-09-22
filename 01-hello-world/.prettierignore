@@ -1,0 +1,15 @@
+# Build output
+/dist
+/tmp
+/out-tsc
+/.angular
+
+# Dependencies
+/node_modules
+
+# Lock files
+package-lock.json
+
+# Misc
+/coverage
+.DS_Store
