@@ -123,11 +123,14 @@ le projet avec `--routing=true` au chapitre 1, cette ligne est déjà là : rien
 > ℹ️ Un `provide…()` déclare un service disponible dans toute l'application. Vous en ajouterez
 > un autre au chapitre 6 pour les appels HTTP.
 
-Assurez-vous enfin que `src/app/app.html` contient bien la zone variable :
+Assurez-vous enfin que `src/app/app.html` contient bien la zone variable — vous l'y avez mise
+à la fin de la manip du chapitre 1 :
 
 ```html
 <router-outlet />
 ```
+
+*(Contenu provisoire : le point 5 y ajoutera la barre de menu.)*
 
 > 💡 **Tester :** rendez-vous sur <http://localhost:4200>. Vous êtes redirigé vers `/home` et
 > voyez « Bienvenue ». Essayez `/about`, puis une URL inventée comme `/nimportequoi` : vous

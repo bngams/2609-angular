@@ -289,6 +289,9 @@ l'application directe de la règle du README : *un composant affiche, un service
 ```bash
 npx ng g s modules/cart/services/Cart --skip-tests
 ```
+> ⚠️ **Comme au chapitre 3, renommez la classe générée.** `ng g s` crée `services/cart.ts`
+> contenant `export class Cart` : renommez cette classe en **`CartService`** (le nom de
+> fichier `cart.ts` reste inchangé).
 
 ### `computed()` : une valeur dérivée
 
@@ -396,7 +399,7 @@ export class Header {
 }
 ```
 
-`header.html` — avant la zone de droite, après le `.spacer` :
+`header.html` — après le `.spacer` :
 
 ```html
 <button matIconButton aria-label="Panier">

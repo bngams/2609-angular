@@ -331,7 +331,11 @@ signal détecte le changement.
 
 </details>
 
-**Rétablissez ensuite le signal** avant de poursuivre.
+**Annulez entièrement la manip** avant de poursuivre :
+
+1. rétablissez le `signal<Product[]>([...])` dans `product-dashboard.ts` ;
+2. remettez les parenthèses dans le gabarit : `[products]="products()"` ;
+3. **supprimez le bouton `Test`** ajouté à l'étape 2.
 
 ---
 
@@ -359,8 +363,6 @@ signal détecte le changement.
 - En MODERN, une entrée est un **signal** : on la lit avec `()`.
 - `@for` répète un bloc et exige `track` pour identifier chaque élément.
 
-➡️ **Chapitre suivant : [M5 — Formulaires et interactions](M5-FORMS-INTERACTIONS.md)**
-
 ---
 
 ## 🛑 Debrief 2
@@ -369,3 +371,7 @@ signal détecte le changement.
 2. Quelle différence entre `[product]="p"` et `product="p"` ?
 3. Pourquoi `track` est-il obligatoire dans `@for` ?
 4. Pourquoi lit-on un signal avec des parenthèses ?
+
+---
+
+➡️ **Chapitre suivant : [M5 — Formulaires et interactions](M5-FORMS-INTERACTIONS.md)**

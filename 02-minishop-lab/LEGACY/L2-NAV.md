@@ -128,10 +128,16 @@ Sans cette précision, Angular considère que `''` correspond au **début** de n
 URL — donc à toutes. `pathMatch: 'full'` impose une correspondance exacte. Obligatoire dès
 qu'on associe une redirection à `''`.
 
+> ⚠️ **Avant de tester, videz `src/app/app.html`.** Le fichier généré contient la longue page
+> de démonstration d'Angular ; tant qu'elle est là, vous verrez le logo Angular au lieu de vos
+> pages. Remplacez **tout** son contenu par cette seule ligne (le point 4 la complétera) :
+>
+> ```html
+> <router-outlet />
+> ```
+
 > 💡 **Tester :** <http://localhost:4200> redirige vers `/home` et affiche « Bienvenue ».
 > `/about` fonctionne, et `/nimportequoi` affiche « 404 ».
->
-> *(Le `<router-outlet>` est déjà présent dans `app.html` — il y sera mis proprement au point 4.)*
 
 ---
 

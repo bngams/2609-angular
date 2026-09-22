@@ -323,8 +323,6 @@ que chaque composant utilise réellement — c'est précisément ce que l'approc
 - `@for` répète un bloc et exige `track`.
 - Face à un `NG0304`, la réponse est **toujours** dans un module.
 
-➡️ **Chapitre suivant : [L5 — Formulaires et interactions](L5-FORMS-INTERACTIONS.md)**
-
 ---
 
 ## 🛑 Debrief 2
@@ -333,3 +331,7 @@ que chaque composant utilise réellement — c'est précisément ce que l'approc
 2. Quelle différence entre `[product]="p"` et `product="p"` ?
 3. Pourquoi `track` est-il obligatoire dans `@for` ?
 4. Un `NG0304` apparaît : quelles questions vous posez-vous, dans quel ordre ?
+
+---
+
+➡️ **Chapitre suivant : [L5 — Formulaires et interactions](L5-FORMS-INTERACTIONS.md)**

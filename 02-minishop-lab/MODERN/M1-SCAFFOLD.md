@@ -201,6 +201,9 @@ npx ng g c pages/NotFound --skip-tests
 | `pages/layout/Header` | Le chemin **et** le nom. Le dossier est créé si besoin. |
 | `--skip-tests` | Ne génère pas le fichier de test. On les écrira nous-mêmes au chapitre 8. |
 
+> ℹ️ `--skip-tests` ne vaut que pour les composants que **vous** générez. `ng new` a tout de
+> même créé `src/app/app.spec.ts` : on y reviendra au chapitre 8.
+
 > 💡 **Tester :** chaque commande affiche trois `CREATE`. Par exemple :
 > ```
 > CREATE src/app/pages/home/home.scss (0 bytes)

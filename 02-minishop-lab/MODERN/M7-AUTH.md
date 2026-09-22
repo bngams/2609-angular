@@ -77,8 +77,16 @@ Les commandes de génération (à adapter) :
 npx ng g c modules/auth/pages/Login --skip-tests
 npx ng g c modules/auth/components/LoginForm --skip-tests
 npx ng g s modules/auth/services/Auth --skip-tests
-npx ng g guard modules/auth/guards/Auth --skip-tests --functional
+npx ng g guard modules/auth/guards/Auth --skip-tests --implements=CanActivate
 ```
+
+> ℹ️ **Sans `--implements=CanActivate`, la commande vous pose une question** (*« Which type of
+> guard would you like to create? »*) et attend une réponse au clavier. En la précisant, la
+> génération se fait d'un trait. Le fichier produit est une **garde fonctionnelle** — la forme
+> actuelle, expliquée à la section 4.
+> ⚠️ **Renommez les classes générées**, comme aux chapitres précédents : `ng g s` crée
+> `export class Auth` dans `services/auth.ts` => renommez-la en **`AuthService`**. Les noms de
+> fichiers, eux, restent tels quels.
 
 *(Le fichier `auth.routes.ts`, lui, se crée à la main — comme `product.routes.ts`.)*
 

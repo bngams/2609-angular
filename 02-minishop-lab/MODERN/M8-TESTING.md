@@ -61,9 +61,10 @@ Angular 22 utilise **Vitest** par défaut. Lancez la commande :
 npx ng test
 ```
 
-> ⚠️ **Le test fourni par défaut échoue** — c'est normal. Le projet généré contenait un test
-> vérifiant le titre « Hello, ng-app-product », or vous avez remplacé ce contenu au chapitre 2.
-> On va le réécrire.
+> ⚠️ **Un des deux tests fournis échoue** — c'est normal. `ng new` a créé `src/app/app.spec.ts`
+> avec deux tests : l'un vérifie que le composant se crée (il passe toujours), l'autre vérifie
+> le titre « Hello, ng-app-product » — or vous avez remplacé ce contenu au **chapitre 1**.
+> On va réécrire le fichier.
 
 Remplacez tout le contenu de **`src/app/app.spec.ts`** par :
 

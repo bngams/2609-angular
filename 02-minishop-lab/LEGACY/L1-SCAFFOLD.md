@@ -25,11 +25,11 @@ ng-app-product/
 │   ├── app/
 │   │   ├── pages/
 │   │   │   ├── layout/header/
-│   │   │   ├── home/  about/  not-found/
-│   │   │   ├── app-module.ts          le module racine
-│   │   │   ├── app-routing-module.ts  le module de routage
-│   │   │   ├── material-module.ts     VOTRE module Material
-│   │   │   └── app.ts                 le composant racine
+│   │   │   └── home/  about/  not-found/
+│   │   ├── app-module.ts          le module racine
+│   │   ├── app-routing-module.ts  le module de routage
+│   │   ├── material-module.ts     VOTRE module Material
+│   │   └── app.ts                 le composant racine
 │   ├── main.ts
 │   └── styles.scss
 └── package.json
@@ -230,6 +230,9 @@ npx ng g c pages/NotFound --skip-tests --m=app
 | Option | Rôle |
 |---|---|
 | `--skip-tests` | Ne génère pas le fichier de test (chapitre 8) |
+
+> ℹ️ `--skip-tests` ne vaut que pour les composants que **vous** générez. `ng new` a tout de
+> même créé `src/app/app.spec.ts` : on y reviendra au chapitre 8.
 | `--m=app` | Ajoute le composant aux `declarations` de `AppModule` |
 
 > 💡 **Tester :** chaque commande affiche trois `CREATE` **et un `UPDATE src/app/app-module.ts`**.

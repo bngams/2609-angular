@@ -54,7 +54,7 @@ L'avantage décisif apparaît à la section 4 : une fonctionnalité bien isolée
 
 ## 🏗️ 2 — Générer la fonctionnalité Product
 
-Quatre commandes. Notez la nouveauté : `ng g i` et `ng g s`.
+Trois commandes. Notez la nouveauté : `ng g i` et `ng g s`.
 
 ```bash
 npx ng g c modules/product/pages/ProductDashboard --skip-tests
@@ -67,6 +67,20 @@ npx ng g s modules/product/services/Product --skip-tests
 | `ng g c` | un **composant** | Affiche quelque chose |
 | `ng g i` | une **interface** | Décrit la *forme* d'une donnée (pas de code exécuté) |
 | `ng g s` | un **service** | Détient une donnée ou un savoir-faire partagé |
+
+> ⚠️ **Renommez la classe du service tout de suite.** Le générateur crée
+> `services/product.ts` contenant `export class Product` — un nom qui **entre en collision**
+> avec l'interface `Product` du modèle. Ouvrez le fichier et renommez la classe en
+> **`ProductService`** (gardez le nom de fichier `product.ts`). Vous obtiendrez :
+>
+> ```ts
+> import { Service } from '@angular/core';
+>
+> @Service()
+> export class ProductService {}
+> ```
+>
+> *(`@Service()` est un raccourci d'Angular 22 pour `@Injectable({ providedIn: 'root' })`.)*
 
 ### Le modèle de données
 

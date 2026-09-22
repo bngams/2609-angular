@@ -17,6 +17,7 @@ sortantes, et peut les modifier au vol.
 
 ```ts
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  // Suppose un signal `token` que vous ajouteriez à votre AuthService du chapitre 7.
   const token = inject(AuthService).token();
   if (!token) {
     return next(req);
@@ -87,6 +88,7 @@ On peut écrire une stratégie sur mesure, par exemple pour ne précharger que l
 marquées :
 
 ```ts
+@Injectable({ providedIn: 'root' })
 export class SelectivePreload implements PreloadingStrategy {
   preload(route: Route, load: () => Observable<unknown>): Observable<unknown> {
     return route.data?.['preload'] ? load() : of(null);

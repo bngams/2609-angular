@@ -80,8 +80,16 @@ npx ng g m modules/Auth --routing
 npx ng g c modules/auth/pages/Login --m=auth --skip-tests
 npx ng g c modules/auth/components/LoginForm --m=auth --skip-tests
 npx ng g s modules/auth/services/Auth --skip-tests
-npx ng g guard modules/auth/guards/Auth --skip-tests --functional
+npx ng g guard modules/auth/guards/Auth --skip-tests --implements=CanActivate
 ```
+
+> ℹ️ **Sans `--implements=CanActivate`, la commande vous pose une question** (*« Which type of
+> guard would you like to create? »*) et attend une réponse au clavier. En la précisant, la
+> génération se fait d'un trait. Le fichier produit est une **garde fonctionnelle** — la forme
+> actuelle, expliquée à la section 4.
+> ⚠️ **Renommez les classes générées**, comme aux chapitres précédents : `ng g s` crée
+> `export class Auth` dans `services/auth.ts` => renommez-la en **`AuthService`**. Les noms de
+> fichiers, eux, restent tels quels.
 
 > ⚠️ **Comme au chapitre 3, pas de `--m=app` sur le module.** `AuthModule` ne doit pas être
 > importé par `AppModule` : le lien se fera **uniquement** par `loadChildren`.
@@ -231,9 +239,9 @@ Vous croiserez deux écritures dans les projets existants :
 | Injection | Par constructeur | Par `inject()` |
 | Statut | **Dépréciée** depuis Angular 15 | Recommandée ✅ |
 
-C'est pourquoi la commande de génération utilise `--functional`. Si vous reprenez un projet
-ancien, vous trouverez des `implements CanActivate` : c'est l'ancienne forme, elle fonctionne
-encore mais ne doit plus être écrite.
+C'est la forme **fonctionnelle** que produit la commande de génération de la section 2. Si
+vous reprenez un projet ancien, vous trouverez des classes `implements CanActivate` : c'est
+l'ancienne forme, elle fonctionne encore mais ne doit plus être écrite.
 
 ### `inject()` dans une garde
 

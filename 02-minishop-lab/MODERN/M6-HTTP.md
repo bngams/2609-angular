@@ -247,7 +247,8 @@ Pratique si vous êtes à l'aise avec `async/await`.
 
 ### Mise en œuvre
 
-🚧 **À compléter** — `product-dashboard.ts` :
+🚧 **À compléter** — `product-dashboard.ts` *(le décorateur `@Component` reste inchangé ;
+seuls les imports et le corps de la classe évoluent)* :
 
 ```ts
 import { Component, OnInit, inject, signal } from '@angular/core';
@@ -340,10 +341,17 @@ Les opérateurs les plus courants :
 | `catchError` | Intercepte une erreur | Renvoyer une liste vide plutôt que planter |
 | `shareReplay` | Partage une même réponse entre plusieurs abonnés | Éviter N requêtes identiques |
 | `debounceTime` | Attend une pause avant d'émettre | Ne pas interroger le serveur à chaque touche |
+| `tap` | Exécute un effet de bord sans rien changer | Journaliser pour déboguer |
 
-`switchMap` mérite un mot : dans une barre de recherche, l'utilisateur tape « cla », « clav »,
+Deux méritent un mot :
+
+**`switchMap`** — dans une barre de recherche, l'utilisateur tape « cla », « clav »,
 « clavi »… Sans lui, trois requêtes partent et les réponses peuvent revenir dans le désordre.
-`switchMap` annule les précédentes — seule la dernière compte.
+`switchMap` annule les précédentes : seule la dernière compte.
+
+**`shareReplay`** — souvenez-vous qu'un observable est froid : **chaque** abonnement rejoue la
+recette. Un même observable consommé par trois endroits déclenche donc **trois** requêtes HTTP.
+`shareReplay(1)` partage la réponse entre tous les abonnés.
 
 > 📖 [Les opérateurs RxJS](https://rxjs.dev/guide/operators) ·
 > [learnrxjs.io](https://www.learnrxjs.io/) (exemples commentés)
@@ -424,7 +432,7 @@ confortable pour du simple affichage de données sur un projet neuf.
 - `provideHttpClient()` est indispensable — son oubli donne `No provider for HttpClient`.
 - Un **observable est froid** : sans `subscribe` (ou pipe `async`), aucune requête ne part.
 - Trois façons de consommer : `subscribe`, pipe `async`, `firstValueFrom`. `toPromise()` est
-  supprimé.
+  **déprécié** (retiré dans RxJS 8).
 - **RxJS** excelle sur les flux d'événements ; les **signaux** sur l'état local. Ils coexistent.
 
 ➡️ **Chapitre suivant : [M7 — Authentification et garde](M7-AUTH.md)**
